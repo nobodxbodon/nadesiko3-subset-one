@@ -9,7 +9,7 @@ class 语法树:
     @staticmethod
     def 节点(
             类型, 主体=None, 值=None, 标识=None, 函数=None, 各参数=None,
-            片段=None):
+            变量=None, 片段=None):
         if 类型 == 语法.模块:
             节点 = ast.Module(body = 主体)
         elif 类型 == 语法.表达式:
@@ -20,6 +20,9 @@ class 语法树:
             节点 = ast.Name(id=标识, ctx=ast.Load())
         elif 类型 == 语法.输出语句:
             节点 = ast.Call(func=函数, args=各参数)
+        elif 类型 == 语法.赋值语句:
+            变量.ctx = ast.Store()
+            节点 = ast.Assign(targets=[变量], value=值)
 
         if 片段 is not None:
             节点.lineno = 语法树.取行号(片段)

@@ -1,0 +1,20 @@
+Module(
+  body=[Assign(
+      targets=[Name(
+          id='和'
+          ctx=Store()
+          lineno=1
+          col_offset=1
+        )]
+      value=Constant(
+        value=0
+        kind=None
+        lineno=1
+        col_offset=3
+      )
+      type_comment=None
+      lineno=1
+      col_offset=1
+    )]
+  type_ignores=[]
+)
