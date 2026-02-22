@@ -7,7 +7,12 @@ Module(
           lineno=1
           col_offset=1
         )
-        args=[]
+        args=[Constant(
+            value=3
+            kind=None
+            lineno=1
+            col_offset=1
+          )]
         keywords=[]
         lineno=1
         col_offset=1

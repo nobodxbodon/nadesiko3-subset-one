@@ -10,7 +10,7 @@ with open(源码文件, 'r') as f:
 
 语法树 = 解析文件(源码)
 
-#print(ast.dump(节点))
+#print(ast.dump(语法树))
 print(语法树相关.格式化节点(语法树, 1))
 
 可执行码 = compile(语法树, 源码文件, 'exec')
