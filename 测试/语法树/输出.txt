@@ -1,0 +1,19 @@
+Module(
+  body=[Expr(
+      value=Call(
+        func=Name(
+          id='print'
+          ctx=Load()
+          lineno=1
+          col_offset=1
+        )
+        args=[]
+        keywords=[]
+        lineno=1
+        col_offset=1
+      )
+      lineno=1
+      col_offset=1
+    )]
+  type_ignores=[]
+)
