@@ -1,0 +1,36 @@
+Module(
+  body=[Assign(
+      targets=[Name(
+          id='数'
+          ctx=Store()
+          lineno=1
+          col_offset=1
+        )]
+      value=Constant(
+        value=1
+        kind=None
+        lineno=1
+        col_offset=3
+      )
+      type_comment=None
+      lineno=1
+      col_offset=1
+    )Assign(
+      targets=[Name(
+          id='和'
+          ctx=Store()
+          lineno=2
+          col_offset=1
+        )]
+      value=Name(
+        id='数'
+        ctx=Load()
+        lineno=2
+        col_offset=3
+      )
+      type_comment=None
+      lineno=2
+      col_offset=1
+    )]
+  type_ignores=[]
+)

@@ -11,7 +11,7 @@ class 语法(Enum):
     每当语句 = auto()
     名称 = auto()
     常量 = auto()
-    数或量 = auto()
+    量 = auto()
     数量计算 = auto()
     条件判断语句 = auto()
 
