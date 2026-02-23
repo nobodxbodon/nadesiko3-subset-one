@@ -28,7 +28,9 @@ class 语法树:
         elif 类型 == 语法.每当语句:
             节点 = ast.While(test=条件, body=主体, orelse=[])
         elif 类型 == 语法.数量计算:
-            if 操作符 == '以下':
+            if 操作符 == '+':
+                节点 = ast.BinOp(left=左项, op=ast.Add(), right=右项)
+            elif 操作符 == '以下':
                 节点 = ast.Compare(left=左项, ops=[ast.LtE()], comparators=[右项])
 
         if 片段 is not None:
@@ -48,6 +50,7 @@ class 语法树:
         if isinstance(片段, 词):
             return 片段.getsourcepos()
         if isinstance(片段, ast.Name) or isinstance(片段, ast.Expr) or isinstance(片段, ast.Constant)\
+            or isinstance(片段, ast.BinOp) \
             or isinstance(片段, ast.Compare):
             return 字符位置(0, 片段.lineno, 片段.col_offset)
         信息 = ""
