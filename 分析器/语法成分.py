@@ -1,16 +1,19 @@
-from enum import Enum, unique
+from enum import Enum, unique, auto
 
 @unique
 class 语法(Enum):
-    模块 = '模块'
-    所有语句 = '所有语句'
-    语句 = '语句'
-    表达式 = '表达式'
-    赋值语句 = '赋值语句'
-    输出语句 = '输出语句'
-    名称 = '名称'
-    常量 = '常量'
-    数或量 = '数或量'
+    模块 = auto()
+    所有语句 = auto()
+    语句 = auto()
+    表达式 = auto()
+    赋值语句 = auto()
+    输出语句 = auto()
+    每当语句 = auto()
+    名称 = auto()
+    常量 = auto()
+    数或量 = auto()
+    数量计算 = auto()
+    条件判断语句 = auto()
 
     def 成分(self, *所有成分):
         文本 = []

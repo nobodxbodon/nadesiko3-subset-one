@@ -9,7 +9,7 @@ class 语法树:
     @staticmethod
     def 节点(
             类型, 主体=None, 值=None, 标识=None, 函数=None, 各参数=None,
-            变量=None, 片段=None):
+            变量=None, 否则=None, 条件=None, 操作符=None, 左项=None, 右项=None, 片段=None):
         if 类型 == 语法.模块:
             节点 = ast.Module(body = 主体)
         elif 类型 == 语法.表达式:
@@ -23,6 +23,13 @@ class 语法树:
         elif 类型 == 语法.赋值语句:
             变量.ctx = ast.Store()
             节点 = ast.Assign(targets=[变量], value=值)
+        elif 类型 == 语法.条件判断语句:
+            节点 = ast.If(test=条件, body=主体, orelse=否则)
+        elif 类型 == 语法.每当语句:
+            节点 = ast.While(test=条件, body=主体, orelse=[])
+        elif 类型 == 语法.数量计算:
+            if 操作符 == '以下':
+                节点 = ast.Compare(left=左项, ops=[ast.LtE()], comparators=[右项])
 
         if 片段 is not None:
             节点.lineno = 语法树.取行号(片段)
@@ -35,11 +42,13 @@ class 语法树:
     @staticmethod
     def 取源码位置(片段):
         if isinstance(片段, list):
+            #print(片段)
             if len(片段) > 0:
                 片段 = 片段[0]
         if isinstance(片段, 词):
             return 片段.getsourcepos()
-        if isinstance(片段, ast.Name) or isinstance(片段, ast.Expr) or isinstance(片段, ast.Constant):
+        if isinstance(片段, ast.Name) or isinstance(片段, ast.Expr) or isinstance(片段, ast.Constant)\
+            or isinstance(片段, ast.Compare):
             return 字符位置(0, 片段.lineno, 片段.col_offset)
         信息 = ""
         if 'lineno' in 片段:
