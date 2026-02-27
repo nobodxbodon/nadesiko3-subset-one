@@ -1,0 +1,20 @@
+Module(
+  body=[AugAssign(
+      target=Name(
+        id='和'
+        ctx=Store()
+        lineno=1
+        col_offset=1
+      )
+      op=Add()
+      value=Constant(
+        value=4
+        kind=None
+        lineno=1
+        col_offset=3
+      )
+      lineno=1
+      col_offset=1
+    )]
+  type_ignores=[]
+)

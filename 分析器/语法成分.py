@@ -14,6 +14,7 @@ class 语法(Enum):
     量 = auto()
     数量计算 = auto()
     条件判断语句 = auto()
+    增量赋值 = auto()
 
     def 成分(self, *所有成分):
         文本 = []
