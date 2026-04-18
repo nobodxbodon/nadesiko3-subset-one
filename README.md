@@ -1,3 +1,5 @@
+A subset of [Nadesiko Japanese programming language](https://github.com/kujirahand/nadesiko3) using Python.
+
 根据[设想](https://zhuanlan.zhihu.com/p/2008128191588488526)，达成如下抚子例程的支持：
 
 ```js
